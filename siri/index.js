@@ -5,7 +5,6 @@ var app = express();
 
 var messages = ["Hello there.", "I'm sorry, I cannot take any requests at this time.", "I can tell you how to do that."];
 
-
 app.get('/', function(req, res) {
   res.status(200).set({
     'Content-Type': 'application/json',
