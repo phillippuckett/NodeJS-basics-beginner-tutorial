@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var express = require('express');
 
-var port = 8080;
+var port = 3000;
 
 var app = express();
 app.use(bodyParser.json());
@@ -22,7 +22,8 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function (req, res) {
-    messages.push(req.body.message);
+    messages.push({message: req.body.message,time: new Date()});
+    // messages.push(req.body.message);
     res.status(200).set({
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
